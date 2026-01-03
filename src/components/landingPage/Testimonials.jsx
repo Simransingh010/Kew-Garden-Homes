@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Testimonials = () => {
-  const [visibleCount, setVisibleCount] = useState(10);
+  const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
     ScrollTrigger.batch('.testimonial-card', {
@@ -26,60 +26,72 @@ const Testimonials = () => {
       duration: 0.5,
       stagger: 0.1,
     });
-    setVisibleCount(prevCount => prevCount + 10);
+    setVisibleCount(prevCount => Math.min(prevCount + 6, testimonials.length));
+  };
+
+  // Placeholder testimonial text (to be replaced with real testimonials)
+  const getTestimonialText = (index) => {
+    const placeholders = [
+      "Working with Garden Kew Homes was the best decision we made. Their fixed-price guarantee meant no surprises, and they delivered our home exactly on time. The attention to detail was incredible.",
+      "From our first consultation to getting the keys, the entire process was transparent and professional. The team kept us updated every week with photos and progress reports. Highly recommend!",
+      "We were nervous about building, but Garden Kew Homes made it stress-free. The unlimited design revisions meant we got exactly the home we wanted, and the quality is outstanding.",
+      "The team at Garden Kew Homes knows Kew inside-out. They helped us navigate council approvals and built our dream home on a challenging sloping block. Couldn't be happier!",
+      "After comparing five different builders, Garden Kew Homes stood out with their genuine guarantees and in-house trades. No subcontractors meant consistent quality throughout.",
+      "Our home was completed in just under 6 months, exactly as promised. The workmanship is exceptional, and we've had zero issues since moving in. Worth every dollar.",
+    ];
+    return placeholders[index % placeholders.length];
   };
 
   return (
-    <div className='mt-10 sm:mt-16 md:mt-20 tracking-wide px-4 sm:px-6 lg:px-8'>
-      <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center my-6 sm:my-8 md:my-10 lg:my-16 xl:my-20 font-serif'>
-        Trusted by Thousands of Our Happy Customers
-      </h2>
-      <div className='flex flex-col items-center'>
-        {testimonials.slice(0, visibleCount).map((testimonial, index) => (
-          <motion.div
-            key={index}
-            className={`testimonial-card w-full sm:w-11/12 md:w-5/6 lg:w-3/4 xl:w-1/2 px-3 sm:px-4 py-2 flex flex-col sm:flex-row items-center mb-6 sm:mb-8 ${
-              index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'
-            }`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <img
-              className='w-20 h-20 sm:w-16 sm:h-16 mb-4 sm:mb-0 sm:mr-6 md:mr-8 lg:mr-12 xl:mr-16 rounded-full border border-neutral-300'
-              src={testimonial.image}
-              alt={testimonial.user}
-            />
-            <div className='relative bg-white rounded-lg p-4 sm:p-6 text-sm sm:text-md shadow-lg border border-neutral-300 flex-1'>
-              <p className='italic'>"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."</p>
-              <div className='mt-3 sm:mt-4'>
-                <h6 className='font-bold text-yellow-600'>{testimonial.user}</h6>
-                <span className='text-xs sm:text-sm font-normal text-neutral-600'>{testimonial.location}</span>
+    <section className="py-lg md:py-xl bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <h2 className="text-neutral-900 mb-4 text-center">
+          Trusted by Kew Families
+        </h2>
+        <p className="text-center text-lg text-neutral-600 mb-12 max-w-2xl mx-auto">
+          Real clients, real experiences, real results
+        </p>
+
+        <div className="flex flex-col items-center gap-8 max-w-4xl mx-auto">
+          {testimonials.slice(0, visibleCount).map((testimonial, index) => (
+            <motion.div
+              key={index}
+              className="testimonial-card w-full px-4 py-6 flex flex-col md:flex-row items-start gap-4 md:gap-6 bg-neutral-50 rounded-lg shadow-custom hover:shadow-premium transition-shadow"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <img
+                className="w-16 h-16 rounded-full border-2 border-primary flex-shrink-0 object-cover"
+                src={testimonial.image}
+                alt={testimonial.user}
+                loading="lazy"
+              />
+              <div className="flex-1">
+                <p className="italic text-neutral-700 mb-4 leading-relaxed">
+                  "{getTestimonialText(index)}"
+                </p>
+                <div>
+                  <h4 className="font-bold text-primary text-lg">{testimonial.user}</h4>
+                  <span className="text-sm text-neutral-600">{testimonial.location}</span>
+                </div>
               </div>
-              <div
-                className={`hidden sm:block absolute top-1/2 transform -translate-y-1/2 ${
-                  index % 2 === 0 ? 'left-[-10px]' : 'right-[-10px]'
-                } border-t-8 border-t-transparent ${
-                  index % 2 === 0 ? 'border-r-8 border-r-white' : 'border-l-8 border-l-white'
-                }`}
-              ></div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-      {visibleCount < testimonials.length && (
-        <div className='text-center mt-8 sm:mt-10'>
-          <motion.button
-            onClick={showMoreTestimonials}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className='px-4 py-2 bg-costumGreen text-white rounded text-sm sm:text-base'
-          >
-            More
-          </motion.button>
+            </motion.div>
+          ))}
         </div>
-      )}
-    </div>
+
+        {visibleCount < testimonials.length && (
+          <div className="text-center mt-12">
+            <button
+              onClick={showMoreTestimonials}
+              className="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105"
+            >
+              Show More Reviews
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
   );
 };
 

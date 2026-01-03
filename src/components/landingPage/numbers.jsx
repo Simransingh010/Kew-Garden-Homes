@@ -2,29 +2,25 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FaPaintBrush, FaBuilding, FaTree, FaCity } from 'react-icons/fa';
+import { FaUsers, FaMapMarkerAlt, FaAward, FaShieldAlt } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Card = ({ icon, title, subtitle, number, delay }) => {
+const Card = ({ icon, title, subtitle, delay }) => {
   return (
     <motion.div
-      className="relative p-6 text-white rounded-xl bg-black/80 hover:bg-gray-900 transition-all duration-300 shadow-lg h-full min-h-[300px]"
+      className="relative p-6 text-neutral-900 rounded-xl bg-white hover:bg-neutral-50 transition-all duration-300 shadow-custom hover:shadow-premium h-full min-h-[280px] border border-neutral-200"
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      whileHover={{ scale: 1.03, boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}
-      role="article"
-      aria-labelledby={`title-${number}`}
+      whileHover={{ scale: 1.02 }}
     >
-      <div className="relative z-10 flex flex-col justify-between h-full">
-        <div>
-          <div className="flex justify-center mb-4 text-4xl text-emerald-400" aria-hidden="true">{icon}</div>
-          <h3 id={`title-${number}`} className="text-xl font-semibold mb-2">{title}</h3>
-          <p className="text-sm text-gray-300">{subtitle}</p>
-        </div>
-        <div className="text-right text-2xl font-bold text-emerald-400 mt-4" aria-label={`Number ${number}`}>{number}</div>
+      <div className="relative z-10 flex flex-col items-center text-center h-full">
+        <div className="flex justify-center mb-4 text-5xl text-primary" aria-hidden="true">{icon}</div>
+        <h3 className="text-xl font-semibold mb-3 text-neutral-900">{title}</h3>
+        <p className="text-base text-neutral-600 leading-relaxed">{subtitle}</p>
       </div>
     </motion.div>
   );
@@ -34,11 +30,10 @@ Card.propTypes = {
   icon: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
   delay: PropTypes.number.isRequired
 };
 
-const Numbers = () => {
+const WhyChooseUs = () => {
   const statsRef = useRef(null);
 
   useEffect(() => {
@@ -62,7 +57,7 @@ const Numbers = () => {
       const updateCount = () => {
         const target = +counter.getAttribute('data-target');
         const count = +counter.innerText.replace(/[^0-9]/g, '');
-        const speed = 100; // Decreased speed for faster counting
+        const speed = 100;
 
         const increment = target / speed;
 
@@ -70,22 +65,18 @@ const Numbers = () => {
           counter.innerText = Math.ceil(count + increment);
           setTimeout(updateCount, 1);
         } else {
-          if (target >= 1000) {
-            counter.innerText = `${(target / 1000).toFixed(1).replace('.0', '')}K`;
-          } else {
-            counter.innerText = target;
-          }
+          counter.innerText = target;
         }
       };
 
-      gsap.fromTo(counter, 
-        { opacity: 0 }, 
-        { 
-          opacity: 1, 
+      gsap.fromTo(counter,
+        { opacity: 0 },
+        {
+          opacity: 1,
           duration: 1,
           scrollTrigger: {
             trigger: counter,
-            start: 'top bottom-=100', // Adjust this to trigger earlier
+            start: 'top bottom-=100',
             end: 'bottom center',
             toggleActions: 'play none none reverse',
             onEnter: updateCount
@@ -97,45 +88,64 @@ const Numbers = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gray-100">
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">Our Expertise</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+    <div className="w-full bg-neutral-50">
+      <div className="container mx-auto px-4 py-16 md:py-20">
+        <h2 className="text-4xl font-bold text-neutral-900 mb-4 text-center">Why Kew Families Choose Us</h2>
+        <p className="text-center text-lg text-neutral-600 mb-12 max-w-2xl mx-auto">
+          We're not like other builders. Here's why.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {[
-            { icon: <FaPaintBrush />, title: 'Interior Design', subtitle: 'Shaping modern acoustic spaces', number: '01' },
-            { icon: <FaBuilding />, title: 'Business Design', subtitle: 'Optimizing workplace efficiency', number: '02' },
-            { icon: <FaTree />, title: 'Landscape Design', subtitle: 'Creating sustainable outdoor areas', number: '03' },
-            { icon: <FaCity />, title: 'Urban Design', subtitle: 'Reimagining city landscapes', number: '04' },
-            { icon: <FaCity />, title: 'Architectural Design', subtitle: 'Crafting iconic structures', number: '05' },
+            {
+              icon: <FaUsers />,
+              title: 'In-House Trades',
+              subtitle: 'Your home built by our permanent team of 12 licensed tradespeople. No subcontractors. No strangers.'
+            },
+            {
+              icon: <FaMapMarkerAlt />,
+              title: 'Local Experts',
+              subtitle: 'We only build in Boroondara (Kew, Hawthorn, Camberwell). We know council regulations inside-out.'
+            },
+            {
+              icon: <FaAward />,
+              title: 'HIA Award Winner',
+              subtitle: 'Best Custom Home $750k-$1M, 2023. Recognized for quality and innovation.'
+            },
+            {
+              icon: <FaShieldAlt />,
+              title: 'Triple Guarantee',
+              subtitle: 'Fixed-price, 6-month completion, unlimited design revisions. Risk-free building.'
+            },
           ].map((item, index) => (
             <Card
               key={index}
               icon={item.icon}
               title={item.title}
               subtitle={item.subtitle}
-              number={item.number}
-              delay={0.3 + index * 0.1}
+              delay={0.2 + index * 0.1}
             />
           ))}
         </div>
       </div>
-      <div ref={statsRef} className="container mx-auto px-4 py-20" aria-label="Company Statistics">
+
+      <div ref={statsRef} className="container mx-auto px-4 py-12 md:py-16" aria-label="Company Statistics">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { target: 21000, label: "Completed Projects" },
-            { target: 31, label: "Awards Won" },
-            { target: 1000, label: "Team Members" },
-            { target: 16, label: "Years of Experience" }
+            { target: 38, label: "Completed Homes" },
+            { target: 16, label: "Years Experience" },
+            { target: 12, label: "In-House Tradespeople" },
+            { target: 127, label: "5-Star Reviews" }
           ].map((item, index) => (
             <div key={index} className="text-center">
-              <span 
-                className="counter text-5xl font-bold text-emerald-600 mb-2 block" 
+              <span
+                className="counter text-5xl font-bold text-primary mb-2 block"
                 data-target={item.target}
                 aria-live="polite"
               >
                 0
               </span>
-              <p className="text-lg text-gray-600">{item.label}</p>
+              <p className="text-lg text-neutral-600">{item.label}</p>
             </div>
           ))}
         </div>
@@ -144,4 +154,4 @@ const Numbers = () => {
   );
 };
 
-export default Numbers;
+export default WhyChooseUs;

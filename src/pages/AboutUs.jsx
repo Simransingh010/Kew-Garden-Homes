@@ -1,14 +1,35 @@
-import React from 'react'
-import AboutUs1 from '../components/aboutUs/aboutUs1'
-import AboutUs2 from '../components/aboutUs/aboutUs2'
+import React from 'react';
+import FounderStory from '../components/aboutUs/FounderStory';
+import OurPillars from '../components/aboutUs/OurPillars';
+import TeamSection from '../components/aboutUs/TeamSection';
+import PageTransition from '../components/common/PageTransition';
+import PageLoader from '../components/common/PageLoader';
+import StickyCallButton from '../components/common/StickyCallButton';
 
 const AboutUs = () => {
   return (
-    <div>
-    <AboutUs1 />
-    <AboutUs2/>
-    </div>
-  )
-}
+    <>
+      {/* Page Loader */}
+      <PageLoader />
 
-export default AboutUs
+      {/* Page Content with Transition */}
+      <PageTransition>
+        <div>
+          {/* Founder Story / Our Mission */}
+          <FounderStory />
+
+          {/* Four Pillars */}
+          <OurPillars />
+
+          {/* Team Section */}
+          <TeamSection />
+
+          {/* Sticky Mobile Buttons */}
+          <StickyCallButton />
+        </div>
+      </PageTransition>
+    </>
+  );
+};
+
+export default AboutUs;
