@@ -86,7 +86,7 @@ const NdisTheoryContent = () => {
         className="max-w-6xl mx-auto"
       >
         <section className="mb-8 sm:mb-12 animate-on-scroll">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-customGreenDark mb-4 leading-tight">KEW GARDEN HOMES NOW ACCREDITED NDIS SDA BUILDER</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-customGreenDark mb-4 leading-tight">KEW GARDEN PROJECTS NOW ACCREDITED NDIS SDA BUILDER</h1>
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-accent leading-relaxed">NDIS-Approved Construction Services for Disability Accommodation - Registered Builders</h2>
         </section>
         

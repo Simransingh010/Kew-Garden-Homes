@@ -118,12 +118,12 @@ const OwnerDetails = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            KEW GARDEN HOMES
+            KEW GARDEN PROJECTS
           </motion.h2>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-4 text-center tracking-wide">
             <TypeAnimation
               sequence={[
-                'Get in Touch with Kew Garden Homes',
+                'Get in Touch with Kew Garden Projects',
                 2000,
                 'We\'re Here to Answer Your Questions',
               ]}

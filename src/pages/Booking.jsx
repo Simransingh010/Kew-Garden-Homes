@@ -143,12 +143,12 @@ const BookingForm = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              KEW GARDEN HOMES
+              KEW GARDEN PROJECTS
             </motion.h2>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-4 text-center tracking-wide">
               <TypeAnimation
                 sequence={[
-                  "Building dreams, one home at a time with Kew Garden Homes",
+                  "Building dreams, one home at a time with Kew Garden Projects",
                   2000,
                   "Crafting exceptional living spaces for every family",
                 ]}

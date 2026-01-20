@@ -22,7 +22,7 @@ const FounderStory = () => {
 
                         <div className="space-y-4 text-neutral-700 leading-relaxed">
                             <p>
-                                <strong>Garden Kew Homes</strong> was founded in 2008 with a simple mission: build custom homes the way they should be built—<strong>on time, on budget, with zero surprises</strong>.
+                                <strong>Kew Garden Projects</strong> was founded in 2008 with a simple mission: build custom homes the way they should be built—<strong>on time, on budget, with zero surprises</strong>.
                             </p>
 
                             <p>

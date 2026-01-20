@@ -32,11 +32,11 @@ const Testimonials = () => {
   // Placeholder testimonial text (to be replaced with real testimonials)
   const getTestimonialText = (index) => {
     const placeholders = [
-      "Working with Garden Kew Homes was the best decision we made. Their fixed-price guarantee meant no surprises, and they delivered our home exactly on time. The attention to detail was incredible.",
+      "Working with Kew Garden Projects was the best decision we made. Their fixed-price guarantee meant no surprises, and they delivered our home exactly on time. The attention to detail was incredible.",
       "From our first consultation to getting the keys, the entire process was transparent and professional. The team kept us updated every week with photos and progress reports. Highly recommend!",
-      "We were nervous about building, but Garden Kew Homes made it stress-free. The unlimited design revisions meant we got exactly the home we wanted, and the quality is outstanding.",
-      "The team at Garden Kew Homes knows Kew inside-out. They helped us navigate council approvals and built our dream home on a challenging sloping block. Couldn't be happier!",
-      "After comparing five different builders, Garden Kew Homes stood out with their genuine guarantees and in-house trades. No subcontractors meant consistent quality throughout.",
+      "We were nervous about building, but Kew Garden Projects made it stress-free. The unlimited design revisions meant we got exactly the home we wanted, and the quality is outstanding.",
+      "The team at Kew Garden Projects knows Kew inside-out. They helped us navigate council approvals and built our dream home on a challenging sloping block. Couldn't be happier!",
+      "After comparing five different builders, Kew Garden Projects stood out with their genuine guarantees and in-house trades. No subcontractors meant consistent quality throughout.",
       "Our home was completed in just under 6 months, exactly as promised. The workmanship is exceptional, and we've had zero issues since moving in. Worth every dollar.",
     ];
     return placeholders[index % placeholders.length];

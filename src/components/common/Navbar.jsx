@@ -45,7 +45,7 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm">
       <div className={`relative ${isSticky ? 'py-2' : 'py-4'} px-4 flex justify-between items-center`}>
         <Link to='/' className={`text-xl sm:text-2xl md:text-3xl font-bold text-primary truncate ${isSticky ? 'text-lg sm:text-xl md:text-2xl' : ''}`} style={{ fontFamily: 'Playfair Display, serif' }}>
-          KEW GARDEN HOMES
+          KEW GARDEN PROJECTS
         </Link>
 
         <div className="flex items-center gap-2 md:gap-4">

@@ -57,7 +57,7 @@ const Footer = () => {
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 text-center sm:text-left">
           <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6 mx-auto sm:mx-0 max-w-xs sm:max-w-none">
-            <h2 className="text-2xl sm:text-3xl font-light mb-2 sm:mb-4 text-accent">KEW GARDEN HOMES</h2>
+            <h2 className="text-2xl sm:text-3xl font-light mb-2 sm:mb-4 text-accent">KEW GARDEN PROJECTS</h2>
             <p className="text-xs sm:text-sm font-light">Bringing your vision to life, together.</p>
             <form className="space-y-3 sm:space-y-4">
               <input type="email" placeholder="Enter your email" className="w-full bg-transparent border-b border-light/30 py-1 sm:py-2 text-xs sm:text-sm focus:outline-none focus:border-accent transition-colors" />
@@ -81,7 +81,7 @@ const Footer = () => {
             <h3 className="text-lg sm:text-xl font-light mb-2 sm:mb-4">Contact Us</h3>
             <p className="text-xs sm:text-sm font-light">25 BURWOOD ROAD,<br />HAWTHORN VIC 3122</p>
             <p className="text-xs sm:text-sm font-light">(03) 9810 2800</p>
-            <p className="text-xs sm:text-sm font-light">hello@Kew Garden Homes.com.au</p>
+            <p className="text-xs sm:text-sm font-light">hello@Kew Garden Projects.com.au</p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
@@ -97,7 +97,7 @@ const Footer = () => {
         </div>
 
         <motion.div variants={itemVariants} className="mt-8 sm:mt-12 pt-4 sm:pt-6 border-t border-light/10 text-center">
-          <p className="text-xs sm:text-sm font-light">&copy; 2024 Kew Garden Homes. All rights reserved. | <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a> | <a href="#" className="hover:text-accent transition-colors">Terms of Service</a></p>
+          <p className="text-xs sm:text-sm font-light">&copy; 2024 Kew Garden Projects. All rights reserved. | <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a> | <a href="#" className="hover:text-accent transition-colors">Terms of Service</a></p>
         </motion.div>
       </motion.div>
     </footer>

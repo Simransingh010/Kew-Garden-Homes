@@ -63,7 +63,7 @@ const ImageCarousel = () => {
           PERSONALISED DESIGN, DEDICATED CONSTRUCTION.
         </div>
         <div className="self-start font-thin text-black text-lg sm:text-xl md:text-2xl lg:text-4xl mt-4">
-          Design and Build your home with Kew Garden Homes. We are dedicated to creating beautiful, customized homes that reflect your unique style and needs. Our expert team ensures quality construction and attention to detail from start to finish.
+          Design and Build your home with Kew Garden Projects. We are dedicated to creating beautiful, customized homes that reflect your unique style and needs. Our expert team ensures quality construction and attention to detail from start to finish.
         </div>
         <button
           className="mt-8 lg:mt-12 py-3 px-6 lg:py-4 lg:px-8 border border-transparent text-black rounded-full text-sm sm:text-base"

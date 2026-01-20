@@ -31,7 +31,7 @@ const PageLoader = () => {
                             className="mb-8"
                         >
                             <h1 className="text-3xl md:text-4xl font-bold text-primary" style={{ fontFamily: 'Playfair Display, serif' }}>
-                                KEW GARDEN HOMES
+                                KEW GARDEN PROJECTS
                             </h1>
                             <p className="text-sm text-neutral-600 mt-2">Building Your Dream Home</p>
                         </motion.div>

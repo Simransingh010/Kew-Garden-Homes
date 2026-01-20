@@ -7,7 +7,7 @@ const TeamSection = () => {
             name: 'Michael Patterson',
             role: 'Founder & Master Builder',
             credentials: 'CDB-U 49183 | 25+ Years Experience',
-            description: 'Former project manager at Metricon, Michael started Garden Kew Homes to prove custom building could be predictable, transparent, and stress-free.',
+            description: 'Former project manager at Metricon, Michael started Kew Garden Projects to prove custom building could be predictable, transparent, and stress-free.',
             image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop'
         },
         {
